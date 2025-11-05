@@ -24,7 +24,16 @@
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
+            "Database\\Seeders\\": "database/seeders/",
+            "App\\Repository\\":"app/Repository",
+            "App\\Services\\":"app/Services",
+            "App\\Traits\\":"app/Traits",
+            "App\\Utils\\":"app/Utils",
+            "App\\Enums\\":"app/Enums"
+
+            
+
+
         }
     },
     "autoload-dev": {
