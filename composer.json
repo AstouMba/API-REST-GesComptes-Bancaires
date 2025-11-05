@@ -29,7 +29,8 @@
             "App\\Services\\":"app/Services",
             "App\\Traits\\":"app/Traits",
             "App\\Utils\\":"app/Utils",
-            "App\\Enums\\":"app/Enums"
+            "App\\Enums\\":"app/Enums",
+            "App\\Observers\\":"app/Observers"
 
             
 

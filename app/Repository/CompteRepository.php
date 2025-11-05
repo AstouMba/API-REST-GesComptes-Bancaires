@@ -5,8 +5,8 @@ use App\Models\Compte;
 use Request;
 class CompteRepository{
     private Compte $compte;
-     public function __construct($compteInjecte){
-        $this->compte=$compteInjecte;
+     public function __construct($compte){
+        $this->compte=$compte;
     }
     
     public function create($data):Compte{

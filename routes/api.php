@@ -17,9 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('v1')->group(function () {
     Route::post('comptes', [CompteController::class, 'store']);
     Route::get('comptes', [CompteController::class, 'index']);
-    Route::get('comptes/{id}', [CompteController::class, 'show']);
-    Route::put('comptes/{id}', [CompteController::class, 'update']);
-    Route::delete('comptes/{id}', [CompteController::class, 'destroy']);
+    // Route::get('comptes/{id}', [CompteController::class, 'show']);
+    // Route::put('comptes/{id}', [CompteController::class, 'update']);
+    // Route::delete('comptes/{id}', [CompteController::class, 'destroy']);
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
