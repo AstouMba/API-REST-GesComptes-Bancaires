@@ -16,6 +16,14 @@ class Transaction extends Model
       protected $casts = [
         'montant' => 'decimal:2',
     ];
+
+    protected $fillable = [
+        'id',
+        'compte_id',
+        'type',
+        'montant',
+        'description',
+    ];
         public function compte()
     {
         return $this->belongsTo(Compte::class);

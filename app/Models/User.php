@@ -17,29 +17,36 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    public $keyType = 'string';
+    public $incrementing = false;
+
     protected $fillable = [
-        'name',
-        'email',
+        'id',
+        'login',
+        'password',
+        'code',
+        'is_admin',
+    ];
+
+   protected $hidden = [
         'password',
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
-
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
     protected $casts = [
-        'email_verified_at' => 'datetime',
-        'password' => 'hashed',
+        'is_admin' => 'boolean',
     ];
+       public function username()
+    {
+        return 'login';
+    }
+
+    public function admin()
+    {
+        return $this->hasOne(Admin::class);
+    }
+
+    public function client()
+    {
+        return $this->hasOne(Client::class, 'utilisateur_id');
+    }
 }

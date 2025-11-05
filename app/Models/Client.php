@@ -10,4 +10,26 @@ class Client extends Model
     use HasFactory;
 
     
+    public $keyType = 'string';
+    public $incrementing = false;
+
+    protected $fillable = [
+         'id',
+         'utilisateur_id',
+         'titulaire',
+         'email',
+         'adresse',
+         'telephone',
+         'nci',
+     ];
+
+    public function utilisateur()
+    {
+        return $this->belongsTo(User::class, 'utilisateur_id');
+    }
+
+     public function comptes()
+    {
+        return $this->hasMany(Compte::class);
+    }
 }
